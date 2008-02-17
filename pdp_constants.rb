@@ -4,7 +4,7 @@ module Proliphix
     # a whole crap load of constants for the proliphix API
 
     # read/write
-    ThermHvacMode = OID.new("thermHvacMode",
+    ThermHvacMode = OID.new("HVAC Mode",
                             "4.1.1",
                             false,
                             {
@@ -14,7 +14,7 @@ module Proliphix
                                 4 => "Auto",
                             })
     
-    ThermHvacState = OID.new("thermHvacState",
+    ThermHvacState = OID.new("HVAC State",
                             "4.1.2",
                              true,
                             {
@@ -29,7 +29,7 @@ module Proliphix
                                 9 => "ResetRelays"
                             })
 
-    ThermFanMode = OID.new("thermFanMode",
+    ThermFanMode = OID.new("Fan Mode",
                            "4.1.3",
                            false,
                            {
@@ -38,7 +38,7 @@ module Proliphix
                                3 => "Schedule",
                            })
     
-    ThermFanState = OID.new("thermFanState",
+    ThermFanState = OID.new("Fan State",
                             "4.1.4",
                             true,
                             {
@@ -47,11 +47,11 @@ module Proliphix
                                 2 => "On",
                             })
     
-    ThermSetbackHeat = OID.new("thermSetbackHeat",
+    ThermSetbackHeat = OID.new("Setback Heat",
                                "4.1.5",
                                false)
     
-    ThermSetbackCool = OID.new("thermSetbackCoo",
+    ThermSetbackCool = OID.new("Setback Cool",
                                "4.1.6",
                                false)
     
@@ -60,7 +60,7 @@ module Proliphix
                                     "4.2.22",
                                     false)
     
-    ThermSetbackStatus = OID.new("thermSetbackStatus",
+    ThermSetbackStatus = OID.new("Setback Status",
                                  "4.1.9",
                                  false,
                                  {
@@ -69,7 +69,7 @@ module Proliphix
                                      3 => "Override"
                                  })
 
-    ThermCurrentPeriod = OID.new("thermCurrentPeriod",
+    ThermCurrentPeriod = OID.new("Current Period",
                                  "4.1.10",
                                  true, # false, but the spec says writes are ignored
                                  {
@@ -79,7 +79,7 @@ module Proliphix
                                      4 => "Night",
                                  })
 
-    ThermActivePeriod = OID.new("thermActivePeriod",
+    ThermActivePeriod = OID.new("Activity Period",
                                 "4.1.12",
                                 true,
                                 { 
@@ -91,7 +91,7 @@ module Proliphix
                                     6 => "Override"
                                 })
 
-    ThermCurrentClass = OID.new("thermCurrenClass",
+    ThermCurrentClass = OID.new("Current Day Class",
                                 "4.1.11",
                                 true,
                                 {
@@ -100,32 +100,32 @@ module Proliphix
                                     3 => "Away"
                                 })
     
-    ThermAverageTemp = OID.new("thermAverageTemp",
+    ThermAverageTemp = OID.new("Temperature (degrees F)",
                                "4.1.13",
                                true)
     
-    ThermHeat1Usage = OID.new("thermHeat1Usage",
+    ThermHeat1Usage = OID.new("Heat Usage (minutes)",
                               "4.5.1",
-                              true) # it says false, but that's just too hard for me to wrap my brain around
+                              true, nil, false) # it says false, but that's just too hard for me to wrap my brain around
 
-    ThermHeat2Usage = OID.new("thermHeat2Usage",
+    ThermHeat2Usage = OID.new("Heat 2 Usage (minutes)",
                               "4.5.2",
-                              true) # it says false, but that's just too hard for me to wrap my brain around
+                              true, nil, false) # it says false, but that's just too hard for me to wrap my brain around
 
-    ThermCool1Usage = OID.new("thermCool1Usage",
+    ThermCool1Usage = OID.new("Cooling Usage (minutes)",
                               "4.5.3",
-                              true) # it says false, but that's just too hard for me to wrap my brain around
+                              true, nil, false) # it says false, but that's just too hard for me to wrap my brain around
 
-    ThermCool2Usage = OID.new("thermCool1Usage",
+    ThermCool2Usage = OID.new("Cooling 2 Usage (minutes)",
                               "4.5.4",
-                              true) # it says false, but that's just too hard for me to wrap my brain around
+                              true, nil, false) # it says false, but that's just too hard for me to wrap my brain around
     
-    ThermFanUsage = OID.new("thermFanUsage",
+    ThermFanUsage = OID.new("Fan Usage (minutes)",
                             "4.5.5",
-                            true)
+                            true, nil, false)
 
-    ThermLastUsageReset = OID.new("thermLastUsageReset",
+    ThermLastUsageReset = OID.new("Last Usage Reset",
                                   "4.5.6",
-                                  false) # we're going to have to be tricky about this one
+                                  false, nil, false) # we're going to have to be tricky about this one
     
 end

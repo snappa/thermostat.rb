@@ -12,6 +12,10 @@ class Thermostat
         @sensors = []
     end
 
+    def [](reading)
+        return @fetched[reading]
+    end
+
     def url
         return "http://#{@ip}"
     end
