@@ -1,7 +1,7 @@
 require 'net/http'
 require 'uri'
 require 'open-uri'
-require 'pdp_constants'
+require 'pdp/constants'
 
 # Some docs
 class Thermostat
