@@ -3,7 +3,9 @@ require 'uri'
 require 'open-uri'
 require 'pdp_constants'
 
+# Some docs
 class Thermostat
+
     def initialize(ip, user, passwd)
         @ip = ip
         @user = user
