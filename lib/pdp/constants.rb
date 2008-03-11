@@ -1,4 +1,3 @@
-require 'oid'
 
 module Proliphix
     # a whole crap load of constants for the proliphix API

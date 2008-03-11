@@ -1,6 +1,9 @@
 require 'net/http'
 require 'uri'
 require 'open-uri'
+
+# order here is important
+require 'pdp/oid'
 require 'pdp/constants'
 
 # Some docs
