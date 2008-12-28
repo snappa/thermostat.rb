@@ -1,3 +1,6 @@
+require 'fileutils'
+include FileUtils
+
 Gem::Specification.new do |s|
     s.name = "thermostat"
     s.version = "0.0.2"
