@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
                "lib/pdp", 
                "lib/pdp/constants.rb", 
                "lib/pdp/oid.rb"
-              ],
+              ]
     s.require_path = "lib"
     s.autorequire = "thermostat"
     s.has_rdoc = true
