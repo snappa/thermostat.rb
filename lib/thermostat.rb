@@ -1,3 +1,6 @@
+$:.unshift(File.dirname(__FILE__)) unless
+  $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
+
 require 'net/http'
 require 'uri'
 require 'open-uri'
@@ -8,7 +11,8 @@ require 'pdp/constants'
 
 # Some docs
 class Thermostat
-
+    VERSION = '1.0'
+    
     def initialize(ip, user, passwd)
         @ip = ip
         @user = user

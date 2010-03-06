@@ -1,0 +1,66 @@
+= thermostat
+
+* http://github.com/#{github_username}/#{project_name}
+
+== DESCRIPTION:
+
+Thermostat.rb is an attempt to build an easy to use ruby api around
+the web services provided by the Proliphix line of network
+thermostats.  Their API is documented at
+http://www.proliphix.com/Documentation.aspx.
+
+The code is tested on the NT20e unit, which is what I own.  It should
+react that same across all their network accessible units.
+
+== FEATURES/PROBLEMS:
+
+Note: It wrote the base module over a year ago, and am now starting to more actively use it in a new project, so interfaces may change to make the api easier to use.
+
+Important notices from the manual:
+
+**Limitations on the Frequency of Operations**
+
+While the device can handle numerous back to back requests, it is
+advisable to not sustain an operation frequency higher than 1 request
+per 60 second period for a substantial amount of time. In other words,
+sustained polling of the device should not exceed a few requests per
+minute. A prolonged burst of requests higher than 1 request per 60
+second period may degrade the main function of the thermostat.  Also,
+if one is making a PIB set and wishes to observe a reaction from the
+device, it is advisable to wait for at least 1 second between the set
+request and subsequent get request.
+
+== SYNOPSIS:
+
+  FIX (code sample of usage)
+
+== REQUIREMENTS:
+
+== INSTALL:
+
+sudo gem install thermostat
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2010 Sean Dague
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

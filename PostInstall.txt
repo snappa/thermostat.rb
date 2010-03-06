@@ -1,0 +1,5 @@
+
+For more information on thermostat.rb, see http://sdaguegems.rubyforge.org/thermostat
+
+
+

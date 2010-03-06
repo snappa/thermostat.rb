@@ -1,0 +1,4 @@
+=== 1.0.0 2010-03-06
+
+* 1 major enhancement:
+  * Conversion to newgem package for easier future maintenance
