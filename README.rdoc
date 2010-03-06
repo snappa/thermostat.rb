@@ -1,6 +1,6 @@
 = thermostat
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/sdague/thermostat.rb
 
 == DESCRIPTION:
 
