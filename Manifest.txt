@@ -1,8 +1,6 @@
 History.txt
-LICENSE
 Manifest.txt
 PostInstall.txt
-README
 README.rdoc
 Rakefile
 account.yaml.example
