@@ -11,11 +11,11 @@ Hoe.plugin :website
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
 $hoe = Hoe.spec 'thermostat' do
-  self.developer 'Sean Dague', 'sean@dague.net'
-  self.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
-  self.rubyforge_name       = 'sdaguegems'
-  # self.extra_deps         = [['activesupport','>= 2.0.2']]
-
+    self.developer 'Sean Dague', 'sean@dague.net'
+    self.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
+    self.rubyforge_name       = 'sdaguegems'
+    self.extra_deps = [['temperature', '>= 1.0.0']]
+    # self.extra_deps         = [['activesupport','>= 2.0.2']]
 end
 
 require 'newgem/tasks'
