@@ -1,4 +1,9 @@
 module Proliphix
+    # This is the core networking module for getting data off the
+    # thermostat.  It looks sort of funny because I am reusing
+    # constants as hash keys which are actually objects.
+    # 
+    
     class Network
         def initialize(ip, user, passwd)
             @ip = ip
@@ -11,6 +16,7 @@ module Proliphix
                         ThermHvacState,
                         ThermFanMode,
                         ThermFanState,
+                        ThermSetbackHeat,
                         ThermSetbackCool,
                         ThermHeat1Usage,
                         ThermCool1Usage,

@@ -1,13 +1,16 @@
 $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
-
 # order here is important
 
 class Thermostat
+    VERSION = "1.0.0"
+    
     require 'pdp/oid'
     require 'pdp/constants'
     require 'pdp/network'
+    
+    include Proliphix
             
     def initialize(ip, user, passwd)
         @network = Proliphix::Network.new(ip, user, passwd)
@@ -40,10 +43,13 @@ class Thermostat
         end
         return nil
     end
-
         
     def temp
         self[ThermAverageTemp]
+    end
+    
+    def fan_on?
+        self[ThermFanState] == "On"
     end
     
 end

@@ -1,4 +1,6 @@
 module Proliphix
+    # This is the basic encapsulation class for OIDs used by the Proliphix thermostat.
+        
     class OID
         def initialize(name, oid, readonly, valuemap = nil, scale = true)
             @name = name
