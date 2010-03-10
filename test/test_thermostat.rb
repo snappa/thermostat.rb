@@ -8,10 +8,10 @@ class TestThermostat < Test::Unit::TestCase
     end
     
     def test_scenario_one
-        @@values[ThermHvacMode] = 2
-        @@values[ThermSetbackHeat] = 690
-        @@values[ThermSetbackCool] = 790
-        @@values[ThermAverageTemp] = 685
+        @@values[ThermHvacMode] = "Heat"
+        @@values[ThermSetbackHeat] = 69.0
+        @@values[ThermSetbackCool] = 79.0
+        @@values[ThermAverageTemp] = 68.5
         
         assert_equal @@thermostat.mode, "Heat"
         assert_equal @@thermostat.temp, 68.5
