@@ -33,7 +33,7 @@ class Thermostat
     # Get the thermostat mode.  This will come back as one of "Off",
     # "Heat", "Cool", or "Auto".
     def mode
-        ThermHvacMode[self[ThermHvacMode]]
+        self[ThermHvacMode]
     end
     
     # Return what temperature the thermostat is attempting to heat to.
@@ -56,7 +56,7 @@ class Thermostat
         
     # Return the current temperature reading on the thermostat
     def temp
-        ThermAverageTemp[self[ThermAverageTemp]]
+        self[ThermAverageTemp]
     end
 
     # Set the target heat-to temperature.  The effects in non heating
