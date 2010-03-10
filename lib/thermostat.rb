@@ -98,11 +98,13 @@ class Thermostat
     # Turn the fan on
     def fan_on!
         self[ThermFanMode] = 2
+        self[ThermFanState]
     end
 
     # Turn the fan off
     def fan_off!
         self[ThermFanMode] = 1
+        self[ThermFanState]
     end
 end
 
