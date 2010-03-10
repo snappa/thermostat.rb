@@ -39,8 +39,8 @@ class Thermostat
     # Return what temperature the thermostat is attempting to heat to.
     def heat_to
         case mode
-        when "Heat" then return ThermSetbackHeat[self[ThermSetbackHeat]]
-        when "Auto" then return ThermSetbackHeat[self[ThermSetbackHeat]]
+        when "Heat" then return self[ThermSetbackHeat]
+        when "Auto" then return self[ThermSetbackHeat]
         end
         return nil
     end
@@ -48,8 +48,8 @@ class Thermostat
     # Return what temperature the thermostat is attempting to cool to.
     def cool_to
         case mode
-        when "Cool" then return ThermSetbackCool[self[ThermSetbackCool]]
-        when "Auto" then return ThermSetbackCool[self[ThermSetbackCool]]
+        when "Cool" then return self[ThermSetbackCool]
+        when "Auto" then return self[ThermSetbackCool]
         end
         return nil
     end
@@ -81,18 +81,18 @@ class Thermostat
     
     # Are we currently running the heat, returns a boolean
     def heating?
-        self[ThermHvacState] == 3
+        self[ThermHvacState] == "Heat"
     end
 
     # Are we currently running the AC, returns a boolean
     def cooling?
-        self[ThermHvacState] == 6
+        self[ThermHvacState] == "Cool"
     end
 
     # Is the fan currently on.  It doesn't matter why it's on, just
     # that it's on.
     def fan_on?
-        self[ThermFanState] == 2
+        self[ThermFanState] == "On"
     end
 
     # Turn the fan on
