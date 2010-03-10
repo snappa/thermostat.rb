@@ -42,6 +42,8 @@ module Proliphix
                   
         def set(name, value)
             set_data(name, value)
+            sleep 1
+            fetch_data
         end
         
         private 
