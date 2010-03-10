@@ -12,6 +12,7 @@ examples/test-fan-on.rb
 examples/test-run.rb
 examples/test-set-heat.rb
 lib/pdp/constants.rb
+lib/pdp/network.rb
 lib/pdp/oid.rb
 lib/thermostat.rb
 script/console
@@ -19,6 +20,7 @@ script/destroy
 script/generate
 script/txt2html
 test/test_helper.rb
+test/test_oid.rb
 test/test_thermostat.rb
 website/index.html
 website/index.txt
