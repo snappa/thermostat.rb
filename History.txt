@@ -1,4 +1,5 @@
-=== 1.0.0 2010-03-06
+=== 1.0.0 2010-03-09
 
-* 1 major enhancement:
+* major enhancements:
   * Conversion to newgem package for easier future maintenance
+  * Make a more sane from end interface
