@@ -3,6 +3,7 @@ module Proliphix
     # thermostat.  It looks sort of funny because I am reusing
     # constants as hash keys which are actually objects.
     # 
+    require "open-uri"
     
     class Network
         def initialize(ip, user, passwd)
