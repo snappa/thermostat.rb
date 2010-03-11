@@ -48,7 +48,9 @@ module Proliphix
                   
         def set(name, value)
             set_data(name, value)
-            sleep 1
+            if not @simulate
+                sleep 1
+            end
             fetch_data
         end
         
