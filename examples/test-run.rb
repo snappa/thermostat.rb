@@ -11,11 +11,12 @@ c = YAML.load_file("../account.yaml")
 
 t = Thermostat.new(c["ip"], c["user"], c["passwd"])
 
-t.set_senors(ThermHvacMode, ThermHvacState, ThermFanState, ThermFanMode, ThermAverageTemp, ThermHeat1Usage, ThermSetbackHeat)
+puts "Temp:         #{t.temp}"
+puts "Mode:         #{t.mode}"
+puts "Setback Heat: #{t.heat_to}"
+puts "Setback Cool: #{t.cool_to}"
+puts "Fan Mode:     #{(t.fan_on?) ? "On" : "Off"}"       
 
-t.fetch_data
-
-puts t
 
 
 
