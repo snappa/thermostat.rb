@@ -1,3 +1,8 @@
+=== 1.1.0 2010-03-10
+* relatively complete unit test coverage
+* add a simulation mode to the network layer so it's easier to test
+* include usage methods in the main thermostat object
+
 === 1.0.0 2010-03-09
 
 * major enhancements:

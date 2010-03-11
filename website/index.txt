@@ -12,8 +12,20 @@ h2. Installing
 
 h2. The basics
 
-
 h2. Demonstration of usage
+
+<pre syntax="ruby">
+  thermostat = Thermostate.new("hostname", "admin", "password")
+
+  # get the current temperature
+  current_temp = thermostat.temp
+
+  # get the current setback heat value
+  current_target_temp = thermostat.heat_to
+
+  # set the thermostat to 69F (units are set in the thermost)
+  thermostat.heat_to = 69
+</pre>
 
 h2. Documentation
 
@@ -22,7 +34,7 @@ Full module level documentat can be found here:http://sdaguegems.rubyforge.org/t
 
 h2. How to submit patches
 
-Read the "8 steps for fixing other people's code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/ and for section "8b: Submit patch to Google Groups":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/#8b-google-groups, use the Google Group above.
+Read the "8 steps for fixing other people's code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/
 
 You can fetch the source from
 
@@ -30,12 +42,15 @@ You can fetch the source from
 
 <pre>git clone git://github.com/sdague/thermostat.rb.git</pre>
 
+To send me code updates, fork the tree on github, make your changes,
+then send me a pull request.  That will make it easy for me to
+integrate your patches.
+
 h3. Build and test instructions
 
 <pre>cd thermostat
 rake test
 rake install_gem</pre>
-
 
 h2. License
 

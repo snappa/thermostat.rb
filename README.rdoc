@@ -32,7 +32,16 @@ request and subsequent get request.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  thermostat = Thermostate.new("hostname", "admin", "password")
+
+  # get the current temperature
+  current_temp = thermostat.temp
+
+  # get the current setback heat value
+  current_target_temp = thermostat.heat_to
+
+  # set the thermostat to 69F (units are set in the thermost)
+  thermostat.heat_to = 69
 
 == REQUIREMENTS:
 
@@ -44,7 +53,7 @@ sudo gem install thermostat
 
 (The MIT License)
 
-Copyright (c) 2010 Sean Dague
+Copyright (c) 2008-2010 Sean Dague
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
