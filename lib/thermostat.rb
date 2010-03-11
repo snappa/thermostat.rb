@@ -4,14 +4,16 @@ $:.unshift(File.dirname(__FILE__)) unless
 # This is the main class for controlling the Proliphix Thermostat.
 # You must first initialize it with the control point credentials
 class Thermostat
-    VERSION = "1.0.0"
-    
+    VERSION = '1.0.0'
+        
     require 'pdp/oid'
     require 'pdp/constants'
     require 'pdp/network'
     
+    attr :network
+    
     include Proliphix
-
+    
     # create a new thermostat object.  It needs
     #  * ip - the ip address of the thermostat, probably 192.168.1.2
     #  * user - the admin user for the thermostat
@@ -53,7 +55,7 @@ class Thermostat
         end
         return nil
     end
-        
+    
     # Return the current temperature reading on the thermostat
     def temp
         self[ThermAverageTemp]
@@ -107,5 +109,6 @@ class Thermostat
         self[ThermFanState]
     end
 end
+
 
 

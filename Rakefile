@@ -4,6 +4,8 @@ require 'hoe'
 require 'fileutils'
 require './lib/thermostat'
 
+ENV['VERSION'] = Thermostat::VERSION
+
 Hoe.plugin :newgem
 Hoe.plugin :website
 # Hoe.plugin :cucumberfeatures
