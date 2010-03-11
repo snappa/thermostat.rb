@@ -91,6 +91,21 @@ class Thermostat
         self[ThermHvacState] == "Cool"
     end
 
+    # The number of minutes of active heating since last reset of the counters.  
+    def heat_usage
+        self[ThermHeat1Usage]
+    end
+
+    # The number of minutes of active cooling since last reset of the counters.  
+    def cool_usage
+        self[ThermCool1Usage]
+    end
+ 
+    # The number of minutes the fan was running since last reset of the counters. 
+    def fan_usage
+        self[ThermFanUsage]
+    end
+     
     # Is the fan currently on.  It doesn't matter why it's on, just
     # that it's on.
     def fan_on?

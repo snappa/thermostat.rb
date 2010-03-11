@@ -18,6 +18,9 @@ class TestThermostat < Test::Unit::TestCase
         assert_equal true, @@t.fan_on?
         assert_equal false, @@t.cooling?
         assert_equal nil, @@t.cool_to
+        assert_equal 87337, @@t.heat_usage
+        assert_equal 47835, @@t.cool_usage
+        assert_equal 36826, @@t.fan_usage
     end
 
     def test_scenario_two
