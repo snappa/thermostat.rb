@@ -1,7 +1,18 @@
 module Proliphix
     # This is the basic encapsulation class for OIDs used by the Proliphix thermostat.
-        
+       
     class OID
+        # Create a new OID.  It takes 5 parameters
+        #  * name - some name you want to make up
+        #  * oid - the oid that Proliphix uses in it's web service call
+        #  * readonly - is the attribute read only (prevents us from 
+        #    ever trying to do a set call
+        #  * valuemap - if the return is fundamentally an enumeration, 
+        #     provide a hash that we can map these to strings that make sense
+        #  * scale - degrees are sent back as ints which are degrees * 10.  
+        #    If scale is set to true these are automatically divided by 10 before
+        #    returned so that you get the answer in degrees
+        
         def initialize(name, oid, readonly, valuemap = nil, scale = true)
             @name = name
             @oid = oid

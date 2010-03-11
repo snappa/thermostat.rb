@@ -9,30 +9,47 @@ the web services provided by the Proliphix line of network
 thermostats.  Their API is documented at
 http://www.proliphix.com/Documentation.aspx.
 
-The code is tested on the NT20e unit, which is what I own.  It should
+The code is tested on the NT20e unit, which is what I own (the NT10e
+is the same hardware, just can't handle remote sensors).  It should
 react that same across all their network accessible units.
 
 == FEATURES/PROBLEMS:
 
-Note: It wrote the base module over a year ago, and am now starting to more actively use it in a new project, so interfaces may change to make the api easier to use.
+=== Pholiphix Quirks
 
-Important notices from the manual:
+There is an important notice in the manual which states that you
+shouldn't make more than 1 request to the thermostat per 60 seconds
+for any sustainable period of time.  Because of that Thermostat.rb
+does internal caching.  If you have a long lived Thermostat.rb object,
+it will fetch attributes on demand, and only refresh them after they
+are more than 60 seconds old.  
 
-**Limitations on the Frequency of Operations**
+Set calls obviously still have to hit the thermostat, but the rate at
+which you are going to use those calls should be much less.  Because
+the thermostat appears to be single threaded to some degree, I've
+found that after a set, an immediate get fails.  To get around this,
+I've made the set call wait 1 second, then do a get off all values
+again.  This means the value map should be right after the set, so all
+attribute gets should reflect the new state of the world.
 
-While the device can handle numerous back to back requests, it is
-advisable to not sustain an operation frequency higher than 1 request
-per 60 second period for a substantial amount of time. In other words,
-sustained polling of the device should not exceed a few requests per
-minute. A prolonged burst of requests higher than 1 request per 60
-second period may degrade the main function of the thermostat.  Also,
-if one is making a PIB set and wishes to observe a reaction from the
-device, it is advisable to wait for at least 1 second between the set
-request and subsequent get request.
+=== Future Todo  
+
+Unit detection.  There is no API to figure out if you are in degrees C
+or degrees F, so I'm currently assuming F (though none of the code
+really cares).  I'd like to both detect that correctly, and use my
+Temperature module to ensure you've values have units.
+
+Day Classes and Activity Periods.  These are in the plumbing but not
+exposed yet.  The API won't let you set them, but at least you could
+get the current versions.
+
+If anyone else has different thermostats they think could plug into
+this interface, I'd be happy to work with them to do so.  The code
+isn't overly generic because I don't like premature abstractions.
 
 == SYNOPSIS:
 
-  thermostat = Thermostate.new("hostname", "admin", "password")
+  thermostat = Thermostat.new("hostname", "admin", "password")
 
   # get the current temperature
   current_temp = thermostat.temp
@@ -42,6 +59,10 @@ request and subsequent get request.
 
   # set the thermostat to 69F (units are set in the thermost)
   thermostat.heat_to = 69
+
+== DOCUMENTATION
+
+Complete API documentation can be found at http://sdaguegems.rubyforge.org/thermostat/rdoc
 
 == REQUIREMENTS:
 

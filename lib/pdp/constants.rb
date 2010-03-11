@@ -1,8 +1,19 @@
-
 module Proliphix
     # a whole crap load of constants for the proliphix API
 
-    # read/write
+    # This is the user setable mode for what state the thermostat is
+    # in.  This could be one of Off, Heat, Cool, or Auto.  These
+    # really mean which setback values the thermostat is going to pay
+    # attention to.  
+    #
+    # In Off, obviously, it ignores them all.  In Heat mode, it only
+    # cares if you are below SetbackHeat.  In Cool mode, it only cares
+    # if you are above SetbackCool.  In Auto mode it will both heat
+    # and cool to keep within some target range.
+    #
+    # Unless you are storing great works of art, Auto mode is
+    # overkill, and probably going to cost you a lot of money on
+    # Spring and Fall days.
     ThermHvacMode = OID.new("HVAC Mode",
                             "4.1.1",
                             false,
