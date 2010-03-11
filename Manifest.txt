@@ -5,7 +5,6 @@ README.rdoc
 Rakefile
 account.yaml.example
 config/website.yml
-config/website.yml.sample
 docs/PDP_API_R1_11.pdf
 examples/test-fan-off.rb
 examples/test-fan-on.rb
@@ -20,6 +19,7 @@ script/destroy
 script/generate
 script/txt2html
 test/test_helper.rb
+test/test_network.rb
 test/test_oid.rb
 test/test_thermostat.rb
 website/index.html
