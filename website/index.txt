@@ -15,7 +15,7 @@ h2. The basics
 h2. Demonstration of usage
 
 <pre syntax="ruby">
-  thermostat = Thermostate.new("hostname", "admin", "password")
+  thermostat = Thermostat.new("hostname", "admin", "password")
 
   # get the current temperature
   current_temp = thermostat.temp
@@ -23,7 +23,7 @@ h2. Demonstration of usage
   # get the current setback heat value
   current_target_temp = thermostat.heat_to
 
-  # set the thermostat to 69F (units are set in the thermost)
+  # set the thermostat to 69F (units are set in the thermostat)
   thermostat.heat_to = 69
 </pre>
 
