@@ -16,7 +16,9 @@ Hoe.plugin :website
 $hoe = Hoe.spec "thermostat" do
     self.developer 'Sean Dague', 'sean@dague.net'
     self.rubyforge_name = "sdaguegems"
-    # self.extra_deps = [['temperature', '>= 1.0.0']]
+    self.extra_rdoc_files = ["README.rdoc"]
+    self.readme_file = "README.rdoc"
+    self.extra_deps = [['temperature', '>= 1.0.0']]
     # self.extra_deps         = [['activesupport','>= 2.0.2']]
 end
 
