@@ -1,19 +1,8 @@
+
 module Proliphix
     # a whole crap load of constants for the proliphix API
 
-    # This is the user setable mode for what state the thermostat is
-    # in.  This could be one of Off, Heat, Cool, or Auto.  These
-    # really mean which setback values the thermostat is going to pay
-    # attention to.  
-    #
-    # In Off, obviously, it ignores them all.  In Heat mode, it only
-    # cares if you are below SetbackHeat.  In Cool mode, it only cares
-    # if you are above SetbackCool.  In Auto mode it will both heat
-    # and cool to keep within some target range.
-    #
-    # Unless you are storing great works of art, Auto mode is
-    # overkill, and probably going to cost you a lot of money on
-    # Spring and Fall days.
+    # read/write
     ThermHvacMode = OID.new("HVAC Mode",
                             "4.1.1",
                             false,
@@ -137,5 +126,22 @@ module Proliphix
     ThermLastUsageReset = OID.new("Last Usage Reset",
                                   "4.5.6",
                                   false, nil, false) # we're going to have to be tricky about this one
+
+    ThermSystemTimeSecs = OID.new("System Time (seconds since epoch)",
+                                  "2.5.1",
+                                  false, nil, false)
+    
+    ThermAuxHeatMode = OID.new("Aux Heat Mode", 
+                               "4.2.30",
+                               false,
+                               {
+                                  1 => "Disabled",
+                                  2 => "Enabled with Compressors",
+                                  3 => "Enabled without Compressors"
+                                })
+
+    ThermAuxHeatOffset = OID.new("Aux Heat Offset (degrees F)",
+                                 "4.1.24",
+                                 true)          
     
 end

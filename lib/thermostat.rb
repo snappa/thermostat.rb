@@ -123,6 +123,44 @@ class Thermostat
         self[ThermFanMode] = 1
         self[ThermFanState]
     end
+    
+    # Get the thermostat system time
+    def system_time
+        self[ThermSystemTimeSecs]
+    end
+    
+    # Set the thermostat system time
+    def system_time=(value)
+        self[ThermSystemTimeSecs] = value.to_i
+        system_time
+    end
+    
+    # Get the aux heat mode
+    def aux_heat
+        self[ThermAuxHeatMode]
+    end
+    
+    # Set the aux heat mode
+    def aux_heat=(value)
+        if (value == "1") or (value == "2") or (value == "3") then
+          self[ThermAuxHeatMode] = value.to_i
+        end
+        aux_heat
+    end
+    
+    # Get the aux heat offset
+    def aux_heat_offset
+        self[ThermAuxHeatOffset]
+    end
+    
+    # Set the aux heat offset
+    def aux_heat_offset=(value)
+        if (value >= 0) and (value <= 10)
+          self[ThermAuxHeatOffset] = value.to_i
+        end
+        aux_heat_offset
+    end
+    
 end
 
 

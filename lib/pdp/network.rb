@@ -27,7 +27,10 @@ module Proliphix
                         ThermHeat1Usage,
                         ThermCool1Usage,
                         ThermFanUsage,
-                        ThermAverageTemp
+                        ThermAverageTemp,
+                        ThermSystemTimeSecs,
+                        ThermAuxHeatMode,
+                        ThermAuxHeatOffset
                        ]
         end
       
