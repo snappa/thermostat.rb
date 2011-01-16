@@ -1,5 +1,7 @@
-=== 1.1.2 ...
+=== 1.2.0 2011-01-16
 * fix rakefile so readme is correct
+* added support for aux heat/aux heat offset/system time (Mark Flocco)
+
 
 === 1.1.1 2010-03-11
 * update examples

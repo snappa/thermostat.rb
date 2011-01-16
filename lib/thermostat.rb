@@ -4,7 +4,7 @@ $:.unshift(File.dirname(__FILE__)) unless
 # This is the main class for controlling the Proliphix Thermostat.
 # You must first initialize it with the control point credentials
 class Thermostat
-    VERSION = '1.1.1'
+    VERSION = '1.2.0'
         
     require 'pdp/oid'
     require 'pdp/constants'
