@@ -154,6 +154,22 @@ module Proliphix
 
     ThermAuxHeatOffset = OID.new("Aux Heat Offset (degrees F)",
                                  "4.1.24",
-                                 true)          
+                                 true)  
+    
+    ThermmSensorAverageRS1 = OID.new("Remote Sensor Average RS #1",
+                           "4.3.8.2",
+                           false,
+                           {
+                               1 => "Sensor is not averaged",
+                               2 => "Sensor is averaged",
+                           })
+    
+    ThermmSensorAverageRS2 = OID.new("Remote Sensor Average RS #2",
+                           "4.3.8.3",
+                           false,
+                           {
+                               1 => "Sensor is not averaged",
+                               2 => "Sensor is averaged",
+                           })
     
 end
