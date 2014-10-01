@@ -18,7 +18,7 @@ class TestThermostatNetwork < Test::Unit::TestCase
     end
 
     def test_get_query_generate
-        base_query = "http://foo/get?OID4.1.1=&OID4.1.2=&OID4.1.3=&OID4.1.4=&OID4.1.5=&OID4.1.6=&OID4.5.1=&OID4.5.3=&OID4.5.5=&OID4.1.13=&OID2.5.1=&OID4.2.30=&OID4.1.24="
+        base_query = "http://foo/get?OID4.1.1=&OID4.1.2=&OID4.1.3=&OID4.1.4=&OID4.1.5=&OID4.1.6=&OID4.5.1=&OID4.5.3=&OID4.5.5=&OID4.1.13=&OID2.5.1=&OID4.2.30=&OID4.1.24=&OID4.3.8.2=&OID4.3.8.3="
         
         @@t.heat_to
         assert_equal(base_query, query)

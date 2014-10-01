@@ -30,7 +30,9 @@ module Proliphix
                         ThermAverageTemp,
                         ThermSystemTimeSecs,
                         ThermAuxHeatMode,
-                        ThermAuxHeatOffset
+                        ThermAuxHeatOffset,
+                        ThermSensorAverageRS1,
+                        ThermSensorAverageRS2
                        ]
         end
       
