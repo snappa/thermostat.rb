@@ -156,7 +156,7 @@ module Proliphix
                                  "4.1.24",
                                  true)  
     
-    ThermmSensorAverageRS1 = OID.new("Remote Sensor Average RS #1",
+    ThermSensorAverageRS1 = OID.new("Remote Sensor Average RS #1",
                            "4.3.8.2",
                            false,
                            {
@@ -164,7 +164,7 @@ module Proliphix
                                2 => "Sensor is averaged",
                            })
     
-    ThermmSensorAverageRS2 = OID.new("Remote Sensor Average RS #2",
+    ThermSensorAverageRS2 = OID.new("Remote Sensor Average RS #2",
                            "4.3.8.3",
                            false,
                            {
